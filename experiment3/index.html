@@ -2,7 +2,7 @@
 <html>
 <head>
 	<!-- This title is used for tabs and bookmarks -->
-	<title>Experiment X - Subject/Topic</title>
+	<title>Experiment 3 - Alternate World</title>
 
 	<!-- Use UTF character set, a good idea with any webpage -->
 	<meta charset="UTF-8" />
@@ -26,17 +26,28 @@
 	<script type="text/javascript" src="./js/project.js" DEFER></script>
 	<!-- Use me for a p5.js project -->
 	<script type="text/javascript" src="./js/sketch.js" DEFER></script>
+	
+	<!-- <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js"
+      integrity="sha512-b/htz6gIyFi3dwSoZ0Uv3cuv3Ony7EeKkacgrcVg8CMzu90n777qveu0PBcbZUA7TzyENGtU+qZRuFAkfqgyoQ=="
+      crossorigin="anonymous"
+    ></script> -->
+
 </head>
 <body>
 	<!-- Style this page by changing the CSS in ../css/site.css or css/experiment.css -->
 	<main id="content">
 		<section>
 
-			<h1>Experiment X - Subject/Topic</h1>
+			<h1>Experiment 3 - Alternate World</h1>
 
 			<div class="minor-section">
 				<div id="canvas-container">
-					<!-- canvas will be added here -->
+					<button id="reseedButton">reseed</button>
+					<span id="seedReport"></span>
+					<hr />
+					<span id="canvasContainer" style="margin: 10px;"></span>
+					<textarea cols="20" rows="20" id="asciiBox" style="opacity: 0.5; letter-spacing: 1ex; width: 320px; margin: 10px; font-family: monospace;"></textarea>
 				</div>
                 <div class="fullscreen-box">
                     <button id="fullscreen">Fullscreen</button>
@@ -45,17 +56,17 @@
 
 			<div class="minor-section">
 				<h2>Description</h2>
-				<p>What are you trying to acomplish with this experiment?</p>
+				<p>In this project I set out to use perlin noise to make worlds in a way that mimics old games such as rogue or old pokemon levels.</p>
 			</div>
 
 			<div class="minor-section">
 				<h2>Technical</h2>
-				<p>Describe in detail what you did technically and how it works?</p>
+				<p>The way I best can describe the process is in two stages. The first is making a text representation from perlin noise. The second is translating the text version into a tile map image representation. The "Overworld" images it generates are just perlin noise where lower numbers are represented as water, higher numbers are represented as land, higher than that is represented as forest, and highest is represented by deep forest. The Dungeon images are slightly different, where the perlin noise is stretched and skewed so that there are a few really high points that cross a threshold. Each of those points are then chosen to build a room, and between each room a pathway is drawn so that all the dungeon rooms are accesible, finally a chest is placed some where in the dungeon away from the walls. The text to image part of the code takes a point and tests its neighbors to see if they are similar. Depeneding upon the neighboring tiles the current tile can be drawn with context where the corners will look smoothed to make the land look nicer.</p>
 			</div>
 
 			<div class="minor-section">
 				<h2>Reflection</h2>
-				<p>Each person that worked on the code should reflect on the process, the difficulties, and the successes of the experiment.</p>
+				<p>I worked on most of the perlin noise generation and tile context mapping. I made the base code for the overworld and my teammate Sean fine tuned the parameters of the noise to make it look nice. Sean also did the animations for the water. I did the entirety of the dungeon on my own.</p>
 			</div>
 
 		</section>
