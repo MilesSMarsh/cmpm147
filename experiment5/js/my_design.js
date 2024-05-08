@@ -6,17 +6,17 @@ function getInspirations() {
     return [
       {
         name: "The Dude", 
-        assetUrl: "./../assets/the_dude.PNG",
+        assetUrl: "./assets/the_dude.PNG",
         credit: "https://www.pinterest.com/pin/39547302947800750/"
       },
       {
         name: "Courtney", 
-        assetUrl: "./../assets/courtney.jpg",
+        assetUrl: "./assets/courtney.jpg",
         credit: "https://www.all-creatures.org/stories/a-courtneygibbon.html"
       },
       {
         name: "Dreamworks", 
-        assetUrl: "./../assets/Dreamworks.jpg",
+        assetUrl: "./assets/Dreamworks.jpg",
         credit: "https://www.flickr.com/photos/9690777@N05/2164060205"
       },
     ];
