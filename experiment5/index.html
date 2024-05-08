@@ -2,7 +2,7 @@
 <html>
 <head>
 	<!-- This title is used for tabs and bookmarks -->
-	<title>Experiment 4.2 - Space Watching</title>
+	<title>Experiment 5 - Monkey Madness Monday</title>
 
 	<!-- Use UTF character set, a good idea with any webpage -->
 	<meta charset="UTF-8" />
@@ -24,19 +24,40 @@
     <script type="text/javascript" src="../js/site.js" DEFER></script>
 	<!-- Use me for a JavaScript OOP Project -->
 	<!-- Use me for a p5.js project -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js" integrity="sha512-b/htz6gIyFi3dwSoZ0Uv3cuv3Ony7EeKkacgrcVg8CMzu90n777qveu0PBcbZUA7TzyENGtU+qZRuFAkfqgyoQ==" crossorigin="anonymous"></script>
-    <script src="./js/xxhash.min.js" defer></script>
-    <script src="./js/engine.js" defer></script>
-    <script src="./js/my_world.js" defer></script>
+    <script type="text/javascript" src="./js/sketch.js" defer></script>
+	<script type="text/javascript" src="./js/my_design.js" defer></script>
 	
 
 </head>
 <body>
+
 	<!-- Style this page by changing the CSS in ../css/site.css or css/experiment.css -->
 	<main id="content">
+
+		<select id="dropper"></select>
+		<button id="restart">
+		restart
+		</button>
+		<p>
+			Mutation rate (<span id="rate"></span>%):<br /><input
+			  id="slider"
+			  type="range"
+			  min="1"
+			  max="100"
+			  value="100"
+			/>
+		</p>
+		<p id="active"></p>
+		<p>Active score: <span id="activeScore"></span></p>
+		<p>Exploration rate: <span id="fpsCounter"></span> fps</p>
+		<p id="best"></p>
+		<p>Best score: <span id="bestScore"></span></p>
+		<p id="memory" data-max-items="16"></p>
+
+
 		<section>
 
-			<h1>Experiment 4.2 - Space Watching</h1>
+			<h1>Experiment 5 - Monkey Madness Monday</h1>
 
 			<div class="minor-section">
 				<div id="canvas-container">
@@ -49,17 +70,17 @@
 
 			<div class="minor-section">
 				<h2>Description</h2>
-				<p>This is the second hashed random isometric tile project. The eyes follow your cursor and go "disco mode" when clicked. The backround was originally supposed to represent a bowling alley floor but ended up representing a starry sky so we just kept it like that.</p>
+				<p>In this project the canvas is supposed to reseble images of monkeys we have chosen using a dithered Voronoi diagram.</p>
 			</div>
 
 			<div class="minor-section">
 				<h2>Technical</h2>
-				<p>The position of the eyes and the stars on the ground are all randomly generated based off of a hashed phrase used as a seed for the random number generator.</p>
+				<p>The algorithm starts by choosing a background color and a few points to base the Voronoi diagram around. It then goes through and for every 4th point will determine which Voronoi point it is closest to and chooses its respective color. It will then move the points around checking its fitness against an evaluation function to see how similar it is to the target image and mutating off of the best fit.</p>
 			</div>
 
 			<div class="minor-section">
 				<h2>Reflection</h2>
-				<p>I helped with the technical aspects of porting the project from glitch and to a local server as well as helping Sean bug fix.</p>
+				<p>I wasn't able to get the Voronoi algorithm working for the longest time. I spent forever trying different implementations and algorithms and finally ended up with a simple dithered Voronoi to help with performance. I know I need to work on the mutation function and the fitness function I just didn't get around to it.</p>
 			</div>
 
 		</section>
